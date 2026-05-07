@@ -29,10 +29,15 @@ import java.util.stream.Collectors;
 import java.io.File;
 import com.pdftools.sys.FileStream;
 import com.pdftools.Sdk;
-import com.pdftools.pdf.*;
-import com.pdftools.pdfa.validation.*;
-import com.pdftools.pdfa.conversion.*;
-import com.pdftools.pdfa.conversion.Converter.*;
+import com.pdftools.pdf.Conformance;
+import com.pdftools.pdf.Document;
+import com.pdftools.pdfa.validation.AnalysisOptions;
+import com.pdftools.pdfa.validation.AnalysisResult;
+import com.pdftools.pdfa.validation.Validator;
+import com.pdftools.pdfa.conversion.Converter;
+import com.pdftools.pdfa.conversion.Converter.ConversionEvent;
+import com.pdftools.pdfa.conversion.Converter.ConversionEventListener;
+import com.pdftools.pdfa.conversion.EventSeverity;
 
 public class PdfToolsValidateConvert
 {
@@ -52,7 +57,7 @@ public class PdfToolsValidateConvert
         {
             // By default, a test license key is active. In this case, a watermark is added to the output. 
             // If you have a license key, please uncomment the following call and set the license key.
-            // Sdk.initialize("insert-license-key-here");
+            // Sdk.initialize("<-- insert license key -->");
 
             // Convert the document to PDF/A-2b
             convertIfNotConforming(args[0], args[1], new Conformance(new Conformance.PdfAVersion(2, Conformance.PdfAVersion.Level.B)));
@@ -77,11 +82,11 @@ public class PdfToolsValidateConvert
             analysisOptions.setConformance(conformance);
 
             // Run the analysis, and check the results.
-            // Only proceed if document is not conforming.
+            // Only proceed if conversion is recommended.
             AnalysisResult analysisResult = validator.analyze(inDoc, analysisOptions);
-            if (analysisResult.getIsConforming())
+            if (!analysisResult.getIsConversionRecommended())
             {
-                System.out.println("Document conforms to " + inDoc.getConformance() + " already.");
+                System.out.println("No conversion required for document with conformance " + inDoc.getConformance() + ".");
                 return;
             }
 

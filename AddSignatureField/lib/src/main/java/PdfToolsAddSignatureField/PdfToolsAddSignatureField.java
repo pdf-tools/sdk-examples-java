@@ -36,10 +36,13 @@ import java.util.stream.Collectors;
 import java.io.File;
 import com.pdftools.sys.FileStream;
 import com.pdftools.Sdk;
-import com.pdftools.geometry.units.*;
+import com.pdftools.geometry.units.Length;
 import com.pdftools.geometry.units.Length.Units;
-import com.pdftools.pdf.*;
-import com.pdftools.sign.*;
+import com.pdftools.geometry.units.Size;
+import com.pdftools.pdf.Document;
+import com.pdftools.sign.Appearance;
+import com.pdftools.sign.SignatureFieldOptions;
+import com.pdftools.sign.Signer;
 
 public class PdfToolsAddSignatureField
 {
@@ -59,7 +62,7 @@ public class PdfToolsAddSignatureField
         {
             // By default, a test license key is active. In this case, a watermark is added to the output. 
             // If you have a license key, please uncomment the following call and set the license key.
-            // Sdk.initialize("insert-license-key-here");
+            // Sdk.initialize("<-- insert license key -->");
 
             // Add a signature field to a PDF document
             addSignatureField(args[0], args[1]);
@@ -81,7 +84,7 @@ public class PdfToolsAddSignatureField
             Document inDoc = Document.open(inStr))
         {
             // Create empty field appearance that is 6cm by 3cm in size
-            var appearance = Appearance.createFieldBoundingBox(new Size(6, 3, Units.CENTIMETRE));
+            Appearance appearance = Appearance.createFieldBoundingBox(new Size(6, 3, Units.CENTIMETRE));
 
             // Add field to last page of document
             appearance.setPageNumber(inDoc.getPageCount());
@@ -91,7 +94,7 @@ public class PdfToolsAddSignatureField
             appearance.setLeft(new Length(6.5, Units.CENTIMETRE));
 
             // Create a signature field configuration
-            var field = new SignatureFieldOptions(appearance);
+            SignatureFieldOptions field = new SignatureFieldOptions(appearance);
 
             try (
                 // Create output stream

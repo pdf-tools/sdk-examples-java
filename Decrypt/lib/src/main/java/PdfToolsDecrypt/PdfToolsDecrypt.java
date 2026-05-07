@@ -29,7 +29,9 @@ import java.io.File;
 import com.pdftools.sys.FileStream;
 import com.pdftools.Sdk;
 import com.pdftools.pdf.Document;
-import com.pdftools.sign.*;
+import com.pdftools.sign.OutputOptions;
+import com.pdftools.sign.SignatureRemoval;
+import com.pdftools.sign.Signer;
 
 public class PdfToolsDecrypt
 {
@@ -49,7 +51,7 @@ public class PdfToolsDecrypt
         {
             // By default, a test license key is active. In this case, a watermark is added to the output. 
             // If you have a license key, please uncomment the following call and set the license key.
-            // Sdk.initialize("insert-license-key-here");
+            // Sdk.initialize("<-- insert license key -->");
 
             // Decrypt a PDF document
             decrypt(args[0], args[1], args[2]);

@@ -13,6 +13,11 @@ Before importing the project, ensure you have the following installed on your sy
 2. **Eclipse IDE** or **IntelliJ IDEA**
 3. **Maven** and/or **Gradle** installed if you want to run the program from the command line (optional, as the IDEs handle this).
 
+This sample requires Pdftools OCR Service installation. To get started, review the following guides:
+
+- [Getting started on Windows](https://www.pdf-tools.com/docs/ocr-service/getting-started/windows/set-up-with-sdk/)
+- [Getting started with Docker](https://www.pdf-tools.com/docs/ocr-service/getting-started/docker/)
+
 ## Importing the Project
 
 ### Using Eclipse

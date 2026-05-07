@@ -40,7 +40,7 @@ import com.pdftools.pdfa.validation.AnalysisResult;
 import com.pdftools.pdfa.validation.Validator;
 import com.pdftools.sys.FileStream;
 
-public class PdfToolsValidateConvert
+public class PdfToolsZugferd
 {
     static void usage() {
         System.out.println("Usage: java pdftoolszugferd <inputPath> <invoicePath> <outputPath>");
@@ -58,7 +58,7 @@ public class PdfToolsValidateConvert
         {
             // By default, a test license key is active. In this case, a watermark is added to the output. 
             // If you have a license key, please uncomment the following call and set the license key.
-            // Sdk.initialize("insert-license-key-here");
+            // Sdk.initialize("<-- insert license key -->");
 
             addZugferdInvoice(args[0], args[1], args[2]);
         }

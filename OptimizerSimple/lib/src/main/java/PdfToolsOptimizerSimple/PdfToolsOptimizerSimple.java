@@ -28,9 +28,9 @@ import java.util.stream.Collectors;
 import java.io.File;
 import com.pdftools.sys.FileStream;
 import com.pdftools.Sdk;
-import com.pdftools.pdf.*;
+import com.pdftools.pdf.Document;
 import com.pdftools.optimization.Optimizer;
-import com.pdftools.optimization.profiles.*;
+import com.pdftools.optimization.profiles.Web;
 
 public class PdfToolsOptimizerSimple
 {
@@ -50,7 +50,7 @@ public class PdfToolsOptimizerSimple
         {
             // By default, a test license key is active. In this case, a watermark is added to the output. 
             // If you have a license key, please uncomment the following call and set the license key.
-            // Sdk.initialize("insert-license-key-here");
+            // Sdk.initialize("<-- insert license key -->");
 
             optimize(args[0], args[1]);
 
