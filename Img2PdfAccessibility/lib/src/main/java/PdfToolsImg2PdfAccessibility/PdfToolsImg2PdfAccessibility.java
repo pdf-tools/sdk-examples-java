@@ -32,7 +32,7 @@ import java.io.File;
 import com.pdftools.sys.FileStream;
 import com.pdftools.Sdk;
 import com.pdftools.image2pdf.Converter;
-import com.pdftools.image2pdf.profiles.*;
+import com.pdftools.image2pdf.profiles.Archive;
 import com.pdftools.pdf.Conformance;
 import com.pdftools.pdf.Conformance.PdfAVersion.Level;
 import com.pdftools.image.Document;
@@ -55,7 +55,7 @@ public class PdfToolsImg2PdfAccessibility
         {
             // By default, a test license key is active. In this case, a watermark is added to the output. 
             // If you have a license key, please uncomment the following call and set the license key.
-            // Sdk.initialize("insert-license-key-here");
+            // Sdk.initialize("<-- insert license key -->");
 
             image2Pdf(args[0], args[1], args[2]);
 

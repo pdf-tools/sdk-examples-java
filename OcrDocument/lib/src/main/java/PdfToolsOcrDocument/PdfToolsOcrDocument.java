@@ -61,7 +61,7 @@ public class PdfToolsOcrDocument
         {
             // By default, a test license key is active. In this case, a watermark is added to the output. 
             // If you have a license key, please uncomment the following call and set the license key.
-            // Sdk.initialize("insert-license-key-here");
+            // Sdk.initialize("<-- insert license key -->");
 
             ocrDocument(args[0], args[1], args[2], args[3]);
 

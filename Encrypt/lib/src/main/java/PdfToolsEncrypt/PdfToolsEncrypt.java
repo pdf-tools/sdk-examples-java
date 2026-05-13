@@ -32,7 +32,9 @@ import com.pdftools.Sdk;
 import com.pdftools.pdf.Document;
 import com.pdftools.pdf.Encryption;
 import com.pdftools.pdf.Permission;
-import com.pdftools.sign.*;
+import com.pdftools.sign.OutputOptions;
+import com.pdftools.sign.SignatureRemoval;
+import com.pdftools.sign.Signer;
 
 public class PdfToolsEncrypt
 {
@@ -52,7 +54,7 @@ public class PdfToolsEncrypt
         {
             // By default, a test license key is active. In this case, a watermark is added to the output. 
             // If you have a license key, please uncomment the following call and set the license key.
-            // Sdk.initialize("insert-license-key-here");
+            // Sdk.initialize("<-- insert license key -->");
 
             // Encrypt a PDF document
             encrypt(args[0], args[1], args[2]);

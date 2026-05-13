@@ -26,10 +26,12 @@ package PdfToolsPdfToolsIntro;
 import java.util.stream.Collectors;
 
 import java.io.File;
+import com.pdftools.Sdk;
 import com.pdftools.documentassembly.DocumentAssembler;
 import com.pdftools.image2pdf.Converter;
 import com.pdftools.image2pdf.profiles.Default;
-import com.pdftools.sys.*;
+import com.pdftools.sys.FileStream;
+import com.pdftools.sys.MemoryStream;
 
 public class PdfToolsPdfToolsIntro
 {
@@ -49,7 +51,7 @@ public class PdfToolsPdfToolsIntro
         {
             // By default, a test license key is active. In this case, a watermark is added to the output. 
             // If you have a license key, please uncomment the following call and set the license key.
-            // Sdk.initialize("insert-license-key-here");
+            // Sdk.initialize("<-- insert license key -->");
 
             String imageCoverPath = args[0];
             String contentPath = args[1];

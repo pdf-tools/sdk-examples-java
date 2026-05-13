@@ -50,7 +50,7 @@ public class PdfToolsMerge
         {
             // By default, a test license key is active. In this case, a watermark is added to the output. 
             // If you have a license key, please uncomment the following call and set the license key.
-            // Sdk.initialize("insert-license-key-here");
+            // Sdk.initialize("<-- insert license key -->");
 
             merge(Arrays.copyOfRange(args, 0, args.length - 1), args[args.length - 1]);
 

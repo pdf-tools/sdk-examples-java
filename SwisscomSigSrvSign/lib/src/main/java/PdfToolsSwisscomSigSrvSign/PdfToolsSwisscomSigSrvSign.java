@@ -37,7 +37,7 @@ import java.net.URI;
 import com.pdftools.sys.FileStream;
 import com.pdftools.HttpClientHandler;
 import com.pdftools.Sdk;
-import com.pdftools.pdf.*;
+import com.pdftools.pdf.Document;
 import com.pdftools.crypto.providers.swisscomsigsrv.Session;
 import com.pdftools.crypto.providers.swisscomsigsrv.SignatureConfiguration;
 import com.pdftools.sign.Signer;
@@ -60,7 +60,7 @@ public class PdfToolsSwisscomSigSrvSign
         {
             // By default, a test license key is active. In this case, a watermark is added to the output. 
             // If you have a license key, please uncomment the following call and set the license key.
-            // Sdk.initialize("insert-license-key-here");
+            // Sdk.initialize("<-- insert license key -->");
 
             // Optional: Set your proxy configuration
             // Sdk.setProxy(new URI("http://myproxy:8080"));

@@ -38,7 +38,7 @@ import java.util.stream.Collectors;
 import java.io.File;
 import com.pdftools.sys.FileStream;
 import com.pdftools.Sdk;
-import com.pdftools.pdf.*;
+import com.pdftools.pdf.Document;
 import com.pdftools.crypto.providers.pkcs11.Module;
 import com.pdftools.crypto.providers.pkcs11.Session;
 import com.pdftools.crypto.providers.pkcs11.SignatureConfiguration;
@@ -62,7 +62,7 @@ public class PdfToolsPkcs11Sign
         {
             // By default, a test license key is active. In this case, a watermark is added to the output. 
             // If you have a license key, please uncomment the following call and set the license key.
-            // Sdk.initialize("insert-license-key-here");
+            // Sdk.initialize("<-- insert license key -->");
 
             String pkcs11Library = args[0];
             String password = args[1];

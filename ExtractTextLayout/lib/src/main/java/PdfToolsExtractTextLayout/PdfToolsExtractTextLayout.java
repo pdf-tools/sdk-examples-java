@@ -29,6 +29,7 @@ import java.util.stream.Collectors;
 
 import java.io.File;
 import com.pdftools.sys.FileStream;
+import com.pdftools.Sdk;
 import com.pdftools.pdf.Document;
 import com.pdftools.extraction.Extractor;
 import com.pdftools.extraction.TextOptions;
@@ -52,7 +53,7 @@ public class PdfToolsExtractTextLayout
         try {
             // By default, a test license key is active. In this case, a watermark is added to the output. 
             // If you have a license key, please uncomment the following call and set the license key.
-            // Sdk.initialize("insert-license-key-here");
+            // Sdk.initialize("<-- insert license key -->");
 
             extractText(args[0], args[1]);
             System.out.println("Execution successful.");

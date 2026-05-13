@@ -32,9 +32,25 @@ import java.util.EnumSet;
 import java.io.File;
 import com.pdftools.sys.FileStream;
 import com.pdftools.Sdk;
-import com.pdftools.pdf.*;
-import com.pdftools.signaturevalidation.*;
-import com.pdftools.signaturevalidation.profiles.*;
+import com.pdftools.pdf.Document;
+import com.pdftools.pdf.SignedSignatureField;
+import com.pdftools.signaturevalidation.Certificate;
+import com.pdftools.signaturevalidation.CmsSignatureContent;
+import com.pdftools.signaturevalidation.ConstraintResult;
+import com.pdftools.signaturevalidation.CustomTrustList;
+import com.pdftools.signaturevalidation.DataSource;
+import com.pdftools.signaturevalidation.Indication;
+import com.pdftools.signaturevalidation.SignatureContent;
+import com.pdftools.signaturevalidation.SignatureSelector;
+import com.pdftools.signaturevalidation.SubIndication;
+import com.pdftools.signaturevalidation.TimeSource;
+import com.pdftools.signaturevalidation.TimeStampContent;
+import com.pdftools.signaturevalidation.ValidationResults;
+import com.pdftools.signaturevalidation.Validator;
+import com.pdftools.signaturevalidation.profiles.Default;
+import com.pdftools.signaturevalidation.profiles.Profile;
+import com.pdftools.signaturevalidation.profiles.RevocationCheckPolicy;
+import com.pdftools.signaturevalidation.profiles.ValidationOptions;
 
 
 public class PdfToolsSignaturesValidate
@@ -55,7 +71,7 @@ public class PdfToolsSignaturesValidate
         {
             // By default, a test license key is active. In this case, a watermark is added to the output. 
             // If you have a license key, please uncomment the following call and set the license key.
-            // Sdk.initialize("insert-license-key-here");    
+            // Sdk.initialize("<-- insert license key -->");    
 
             String inputFile = args[0];
             String certDir = (args.length == 2 ? args[1] : null);
@@ -174,7 +190,16 @@ public class PdfToolsSignaturesValidate
                     System.out.println("Unable to validate document Revision: " + ex.getMessage());
                 }
 
-                printContent(result.getSignatureContent(), result.getSignatureField().getFullRevisionCovered());
+                Boolean isFullRevisionCovered = null;
+                try
+                {
+                    isFullRevisionCovered = result.getSignatureField().getIsFullRevisionCovered();
+                }
+                catch (Exception ex)
+                {
+                    System.out.println("Unable to determine full revision coverage: " + ex.getMessage());
+                }
+                printContent(result.getSignatureContent(), isFullRevisionCovered);
                 System.out.println();
             });
 
