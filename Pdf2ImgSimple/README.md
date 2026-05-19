@@ -71,7 +71,7 @@ Before importing the project, ensure you have the following installed on your sy
 
   ```bash
   mvn clean install
-  mvn exec:java -Dexec.mainClass="PdfToolsPdf2ImgSimple.PdfToolsPdf2ImgSimple" -Dexec.args="<inputPath> <outputPath>"
+  mvn exec:exec -Dexec.programArgs="<inputPath> <outputPath>"
   ```
 
 ### Using Gradle

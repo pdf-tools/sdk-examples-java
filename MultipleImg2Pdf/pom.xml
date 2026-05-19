@@ -4,6 +4,10 @@
   <artifactId>PdfToolsMultipleImg2Pdf</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
+  <properties>
+    <exec.programArgs></exec.programArgs>
+  </properties>
+
   <build>
     <sourceDirectory>lib/src/main/java</sourceDirectory>
     <plugins>
@@ -34,7 +38,8 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.5.0</version>
         <configuration>
-          <mainClass>PdfToolsMultipleImg2Pdf.PdfToolsMultipleImg2Pdf</mainClass>
+          <executable>java</executable>
+          <commandlineArgs>-cp %classpath PdfToolsMultipleImg2Pdf.PdfToolsMultipleImg2Pdf ${exec.programArgs}</commandlineArgs>
         </configuration>
       </plugin>
     </plugins>

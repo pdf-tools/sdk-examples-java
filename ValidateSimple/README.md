@@ -71,7 +71,7 @@ Before importing the project, ensure you have the following installed on your sy
 
   ```bash
   mvn clean install
-  mvn exec:java -Dexec.mainClass="PdfToolsValidateSimple.PdfToolsValidateSimple" -Dexec.args="<inputPath>"
+  mvn exec:exec -Dexec.programArgs="<inputPath>"
   ```
 
 ### Using Gradle

@@ -71,7 +71,7 @@ Before importing the project, ensure you have the following installed on your sy
 
   ```bash
   mvn clean install
-  mvn exec:java -Dexec.mainClass="PdfToolsAddAppearanceSignatureField.PdfToolsAddAppearanceSignatureField" -Dexec.args="<certificateFile> <password> <appConfigFile> <inputPath> <outputPath>"
+  mvn exec:exec -Dexec.programArgs="<certificateFile> <password> <appConfigFile> <inputPath> <outputPath>"
   ```
 
 ### Using Gradle

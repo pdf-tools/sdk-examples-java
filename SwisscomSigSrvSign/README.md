@@ -71,7 +71,7 @@ Before importing the project, ensure you have the following installed on your sy
 
   ```bash
   mvn clean install
-  mvn exec:java -Dexec.mainClass="PdfToolsSwisscomSigSrvSign.PdfToolsSwisscomSigSrvSign" -Dexec.args="<identity> <commonName> <inputPath> <outputPath>"
+  mvn exec:exec -Dexec.programArgs="<identity> <commonName> <inputPath> <outputPath>"
   ```
 
 ### Using Gradle

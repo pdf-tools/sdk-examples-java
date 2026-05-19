@@ -4,6 +4,10 @@
   <artifactId>PdfToolsAddSignatureField</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
+  <properties>
+    <exec.programArgs></exec.programArgs>
+  </properties>
+
   <build>
     <sourceDirectory>lib/src/main/java</sourceDirectory>
     <plugins>
@@ -34,7 +38,8 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.5.0</version>
         <configuration>
-          <mainClass>PdfToolsAddSignatureField.PdfToolsAddSignatureField</mainClass>
+          <executable>java</executable>
+          <commandlineArgs>-cp %classpath PdfToolsAddSignatureField.PdfToolsAddSignatureField ${exec.programArgs}</commandlineArgs>
         </configuration>
       </plugin>
     </plugins>

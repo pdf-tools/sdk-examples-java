@@ -76,7 +76,7 @@ This sample requires Pdftools OCR Service installation. To get started, review t
 
   ```bash
   mvn clean install
-  mvn exec:java -Dexec.mainClass="PdfToolsOcrDocument.PdfToolsOcrDocument" -Dexec.args="<ocrEngineName> <language> <inputPath> <outputPath>"
+  mvn exec:exec -Dexec.programArgs="<ocrEngineName> <language> <inputPath> <outputPath>"
   ```
 
 ### Using Gradle
