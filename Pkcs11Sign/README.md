@@ -71,7 +71,7 @@ Before importing the project, ensure you have the following installed on your sy
 
   ```bash
   mvn clean install
-  mvn exec:java -Dexec.mainClass="PdfToolsPkcs11Sign.PdfToolsPkcs11Sign" -Dexec.args="<pkcs11Library> <password> <certificate> <inputPath> <outputPath>"
+  mvn exec:exec -Dexec.programArgs="<pkcs11Library> <password> <certificate> <inputPath> <outputPath>"
   ```
 
 ### Using Gradle

@@ -71,7 +71,7 @@ Before importing the project, ensure you have the following installed on your sy
 
   ```bash
   mvn clean install
-  mvn exec:java -Dexec.mainClass="PdfToolsBuiltInCertify.PdfToolsBuiltInCertify" -Dexec.args="<certificateFile> <password> <inputPath> <outputPath>"
+  mvn exec:exec -Dexec.programArgs="<certificateFile> <password> <inputPath> <outputPath>"
   ```
 
 ### Using Gradle

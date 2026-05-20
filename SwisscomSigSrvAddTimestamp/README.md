@@ -71,7 +71,7 @@ Before importing the project, ensure you have the following installed on your sy
 
   ```bash
   mvn clean install
-  mvn exec:java -Dexec.mainClass="PdfToolsSwisscomSigSrvAddTimestamp.PdfToolsSwisscomSigSrvAddTimestamp" -Dexec.args="<identity> <inputPath> <outputPath>"
+  mvn exec:exec -Dexec.programArgs="<identity> <inputPath> <outputPath>"
   ```
 
 ### Using Gradle

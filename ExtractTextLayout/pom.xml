@@ -4,6 +4,10 @@
   <artifactId>PdfToolsExtractTextLayout</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
+  <properties>
+    <exec.programArgs></exec.programArgs>
+  </properties>
+
   <build>
     <sourceDirectory>lib/src/main/java</sourceDirectory>
     <plugins>
@@ -34,7 +38,8 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.5.0</version>
         <configuration>
-          <mainClass>PdfToolsExtractTextLayout.PdfToolsExtractTextLayout</mainClass>
+          <executable>java</executable>
+          <commandlineArgs>-cp %classpath PdfToolsExtractTextLayout.PdfToolsExtractTextLayout ${exec.programArgs}</commandlineArgs>
         </configuration>
       </plugin>
     </plugins>
