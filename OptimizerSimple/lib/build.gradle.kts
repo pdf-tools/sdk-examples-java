@@ -23,5 +23,5 @@ java {
 }
 
 dependencies {
-    implementation("com.pdftools:pdftools-sdk:1.17.0")
+    implementation("com.pdftools:pdftools-sdk:1.18.0")
 }
